@@ -1,0 +1,44 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/styles/fontawesome-free/css/all.css">
+    <link rel="stylesheet" href="static/styles/style.css">
+    <title>Spanish Vocab</title>
+</head>
+
+<body>
+    <div>Spanish exercise</div>
+    <form action="" method="GET" id="select">
+        <label for="selector">Choose from the following:</label><br>
+        <select name="mode" id="selector" onchange="this.form.submit()" data-table='{{select}}'>
+            <option value="Noun" >Nouns</option>
+            <option value="Adj" >Adjectives</option>
+            <option value="Pre">Prepostions</option>
+        </select><br>
+    </form>
+    <div><a href="#" class="shake"><i class="fas fa-dice-five"></i></a></div> <br>
+
+    <p name="spanish">{{word.spanish}}</p>
+
+    <form action="?prevS={{word.spanish}}" method="POST">
+        <label for="trans">Enter translation in English:</label>
+        <input type="text" name="trans" id="my-input" required="true" autofocus>
+        <input type="submit" value="Check Answer">
+    </form>
+
+    {% if not translation %}
+
+    {% else %}
+    {% if translation != ' ' and check == True %}
+    <p>You have entered: {{translation}} which is correct.</p>
+    {% else %}
+    <p>You have entered: {{translation}} which is false. The correct translation is {{previousEnglish}}</p>
+    {%endif%}
+
+    {%endif%}
+    <script src="../static/logic.js"></script>
+</body>
+
+</html>
