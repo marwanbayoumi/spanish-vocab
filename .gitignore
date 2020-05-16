@@ -1,2 +1,4 @@
 .*
 venv/
+C:\Users\marwa\Documents\flask-tutorial\flaskr\static\styles\fontawesome-free\*
+!C:\Users\marwa\Documents\flask-tutorial\flaskr\static\styles\fontawesome-free\css
